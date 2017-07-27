@@ -1,10 +1,10 @@
 import React from 'react';
 require('./css/additem.scss')
 
-export default class AddItem extends React.Components{
+class AddItem extends React.Component{
     render(){
         return(
-            <form id="add-todo" onSubmit={this.handleSubmit}>
+            <form id="add-todo" onSubmit={this.handleSubmit.bind(this)}>
                 <input type="text" placeholder="Add Some.." required ref="newItem"/>
                 <input type="submit" value="Add" />
             </form>

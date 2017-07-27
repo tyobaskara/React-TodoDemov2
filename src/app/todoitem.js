@@ -2,13 +2,13 @@ import React from 'react';
 require('./css/todoItem.scss');
 
 //Create TodoItem Component
-export default class TodoItem extends React.Component{
+class TodoItem extends React.Component{
     render(){
         return(
             <li>
                 <div className="todo-item">
                     <span className="item-name">{this.props.item}</span>
-                    <span className="item-delete" onClick={this.handleDelete}> x </span>
+                    <span className="item-delete" onClick={this.handleDelete.bind(this)}> x </span>
                 </div>
             </li>
         )

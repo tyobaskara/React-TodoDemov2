@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from "react-helmet";
 require('./css/index.scss');
 import {Router, Route, browserHistory, Link} from 'react-router';
 
@@ -21,8 +22,8 @@ class App extends React.Component{
 
 //Create component
 class TodoComponent extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             todos: ['wash up', 'eat some cheese', 'take a nap', 'buy flowers']
         }
@@ -31,15 +32,18 @@ class TodoComponent extends React.Component{
         var todos = this.state.todos;
         todos = todos.map(function(item, index){
             return(
-                <TodoItem item={item} key={index} onDelete={this.onDelete}/>
+                <TodoItem item={item} key={index} onDelete={this.onDelete.bind(this)}/>
             )
         }.bind(this));
         return (
             <div id="todo-list">
+                <Helmet>
+                    <title>To Do List</title>
+                </Helmet>
                 <Link to={'/about'}>About</Link>
                 <p>The busies people have the most leisure...</p>
                 <ul>{todos}</ul>
-                <AddItem onAdd={this.onAdd}/>
+                <AddItem onAdd={this.onAdd.bind(this)}/>
             </div>
         );
     }// render
@@ -63,7 +67,6 @@ class TodoComponent extends React.Component{
         this.setState({
             todos: updatedTodos
         })
-        document.getElementById
     }
 
     //lifecycle function
