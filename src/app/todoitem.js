@@ -1,5 +1,4 @@
 import React from 'react';
-require('./css/todoItem.scss');
 
 //Create TodoItem Component
 class TodoItem extends React.Component{

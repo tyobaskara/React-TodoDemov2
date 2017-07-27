@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Helmet} from "react-helmet";
-require('./css/index.scss');
+require('./css/main.scss');
 import {Router, Route, browserHistory, Link} from 'react-router';
 
 //Module requires

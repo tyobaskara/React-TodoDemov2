@@ -1,5 +1,4 @@
 import React from 'react';
-require('./css/additem.scss')
 
 class AddItem extends React.Component{
     render(){
