@@ -4,5 +4,6 @@ Thanks for the tutorial from youtube channel the net ninja: https://www.youtube.
 - using React.Component 
 - using React.Helmet for Insert (Meta Tags,title,etc) on <Head>, for each component
 - using SCSS SASS 
+- Minified JS
 - npm install 
 - npm start
